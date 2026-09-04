@@ -21,6 +21,7 @@ Economia expressiva de tempo na redação e resposta a e-mails, maior produtivid
 5. Existe algum risco ou limitação observável?
 
 Risco de falsos positivos (e-mails legítimos caindo no spam), sugestões de texto genéricas ou sem o tom ideal para determinados contextos profissionais e preocupações contínuas de privacidade em relação ao processamento automático de dados confidenciais.
+
 ---
 Aplicativo: WhatsApp
 
@@ -38,6 +39,7 @@ Acessibilidade e rapidez na leitura de recados de voz, comunicação fluida sem 
 
 Existe algum risco ou limitação observável?
 Imprecisão na transcrição de sotaques regionais ou gírias, alucinações na geração de respostas da Meta AI e receios de privacidade sobre o uso de conversas para treinamento de modelos de linguagem.
+
 ---
 Aplicativo: Spotify
 
@@ -55,6 +57,7 @@ Experiência musical altamente personalizada e contínua, descoberta sem esforç
 
 Existe algum risco ou limitação observável?
 Criação de "bolhas de filtro" (o usuário só ouve mais do mesmo), viés do algoritmo favorecendo grandes gravadoras e recomendações irrelevantes caso a conta seja compartilhada com outras pessoas.
+
 ---
 Aplicativo: Uber
 
@@ -72,6 +75,7 @@ Menor tempo de espera por um veículo, maior previsibilidade no horário de cheg
 
 Existe algum risco ou limitação observável?
 Flutuação abrupta e alta de preços em momentos de pico, dependência de sinal de GPS e possíveis falhas/falsos negativos na verificação facial de motoristas.
+
 ---
 Aplicativo: Google Fotos
 
