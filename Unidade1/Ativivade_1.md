@@ -1,5 +1,6 @@
 Atividades de Fundamentos de IA e Engenharia de Prompt
 
+---
 Aplicativo: Gmail
 
 1. Onde a IA está presente neste app?
