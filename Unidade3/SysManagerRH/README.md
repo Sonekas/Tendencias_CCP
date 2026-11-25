@@ -47,7 +47,7 @@ Aplicação web acadêmica de Recursos Humanos desenvolvida para demonstrar cada
 - **Problema identificado**: Controles manuais de admissões e cadastros em planilhas isoladas dificultam acompanhar prazos próximos de início, geram inconsistência em setores e e-mails duplicados, distorcem indicadores quando filtros são aplicados e expõem registros quando não há controle de acesso.
 - **Resultado esperado**: Centralizar o cadastro com setores padronizados (`RH`, `TI`, `Financeiro`, `Operações`), validar importações CSV antes da gravação, destacar pendências próximas na linha do tempo de 7 dias, manter indicadores globais sempre atualizados sobre a base completa e restringir leitura/escrita apenas a contas Google autorizadas pelo administrador.
 
-Link do Projeto: https://ai.studio/apps/450afd8d-1c4c-423b-8278-b95ee992f966
+Link do Projeto: [https://ai.studio/apps/450afd8d-1c4c-423b-8278-b95ee992f966](https://www.google.com/url?sa=E&q=https%3A%2F%2Fais-dev-r5h6d372723vwup6cdnb6h-611676024757.us-east1.run.app)
 ---
 
 ## 2. Desafio e Escopo
