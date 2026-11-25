@@ -4,7 +4,7 @@
 | **Disciplina** | `Tendências em Ciência da Computação` |
 | **Professor(a)** | `Kadidja Valéria` |
 
-### Divisão de Responsabilidades do Grupo *(Colaboração em grupo — 0,3 ponto)*
+### Divisão de Responsabilidades do Grupo
 
 | Integrante | RA / Identificação |
 |---|---|
