@@ -4,7 +4,6 @@
 - **Nome:** Pedro Henrique Cunha Amancio da Silva
 - **Instituição / Curso:** Centro Universitário UDF — Ciência da Computação
 - **Disciplina:** Tendências em Ciência da Computação (Unidade II)
-- **Data:** 25/11/2026
 - **Ferramenta de IA utilizada:** Google Gemini
 
 ---
