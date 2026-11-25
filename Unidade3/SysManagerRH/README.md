@@ -1,3 +1,14 @@
+| **Instituição** | `Centro Universitário UDF` |
+| **Curso** | `Ciência da Computação` |
+| **Disciplina** | `Tendências em Ciência da Computação` |
+| **Professor(a)** | `Kadidja Valéria` |
+
+### Divisão de Responsabilidades do Grupo *(Colaboração em grupo — 0,3 ponto)*
+
+| Integrante | RA / Identificação | Responsabilidade no Projeto |
+| `Pedro Henrique Cunha Amancio da Silva` | `45729620`
+
+
 # Sistema de Gestão de Colaboradores
 
 Aplicação web acadêmica de Recursos Humanos desenvolvida para demonstrar cadastro de colaboradores fictícios, importação validada por CSV, painel de indicadores e acompanhamento visual de admissões em linha do tempo de 7 dias, com autenticação Google (**Firebase Authentication**), persistência em nuvem (**Cloud Firestore**) e controle de acesso restrito por **UIDs autorizados**.
@@ -240,25 +251,3 @@ Veja a análise expandida em [`docs/reflexao-critica.md`](./docs/reflexao-critic
 - Remover dependências herdadas do template não utilizadas em runtime (`express`, `@google/genai`, `motion`, `dotenv`).
 
 ---
-
-## 11. Integrantes e Informações Acadêmicas *(campos editáveis)*
-
-> **Instrução ao estudante/equipe**: Preencha os campos abaixo com os dados reais antes de publicar ou entregar no ambiente da disciplina.
-
-| Campo | Preenchimento |
-|---|---|
-| **Instituição** | `[Preencher: Nome da universidade / faculdade]` |
-| **Curso** | `[Preencher: Nome do curso]` |
-| **Disciplina** | `[Preencher: Nome da disciplina]` |
-| **Professor(a)** | `[Preencher: Nome do(a) professor(a)]` |
-| **Data de entrega** | `[Preencher: DD/MM/AAAA]` |
-
-### Divisão de Responsabilidades do Grupo *(Colaboração em grupo — 0,3 ponto)*
-
-| Integrante | RA / Identificação | Responsabilidade no Projeto |
-|---|---|---|
-| `[Preencher: Integrante 1]` | `[RA]` | `[Ex.: Definição do desafio, configuração do Firebase e cadastro de UID]` |
-| `[Preencher: Integrante 2]` | `[RA]` | `[Ex.: Condução dos prompts no AI Studio, validação de CSV e linha do tempo]` |
-| `[Preencher: Integrante 3]` | `[RA]` | `[Ex.: Execução dos testes ao vivo, captura das evidências e documentação]` |
-
-*(Caso o projeto seja individual, mantenha apenas uma linha com o seu nome e responsabilidade.)*
