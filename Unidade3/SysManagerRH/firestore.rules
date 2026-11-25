@@ -1,0 +1,134 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Rede de segurança global: nega tudo por padrão
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string
+        && id.size() >= 1
+        && id.size() <= 128
+        && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerifiedUser() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isAuthorizedUser() {
+      return isVerifiedUser()
+        && exists(/databases/$(database)/documents/authorized_users/$(request.auth.uid));
+    }
+
+    function isValidColaborador(data) {
+      return data.keys().hasAll(['id', 'nome', 'email', 'setor', 'situacao', 'atualizadoEm'])
+        && data.keys().hasOnly(['id', 'nome', 'email', 'setor', 'situacao', 'atualizadoEm', 'atualizadoPorUid'])
+        && isValidId(data.id)
+        && data.nome is string
+        && data.nome.size() >= 2
+        && data.nome.size() <= 160
+        && data.email is string
+        && data.email.size() >= 5
+        && data.email.size() <= 254
+        && data.email.matches('^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$')
+        && data.setor in ['RH', 'TI', 'Financeiro', 'Operações']
+        && data.situacao in ['Ativo', 'Inativo']
+        && data.atualizadoEm is string
+        && data.atualizadoEm.size() >= 10
+        && data.atualizadoEm.size() <= 40
+        && (!('atualizadoPorUid' in data) || (data.atualizadoPorUid is string && data.atualizadoPorUid == request.auth.uid));
+    }
+
+    function isValidAdmissaoTask(task) {
+      return task is map
+        && task.keys().hasAll(['id', 'titulo', 'concluida'])
+        && task.keys().hasOnly(['id', 'titulo', 'concluida'])
+        && task.id is string
+        && task.id.size() >= 1
+        && task.id.size() <= 40
+        && task.titulo is string
+        && task.titulo.size() >= 1
+        && task.titulo.size() <= 120
+        && task.concluida is bool;
+    }
+
+    function isValidAdmissao(data) {
+      return data.keys().hasAll(['id', 'colaboradorId', 'tarefas', 'criadaEm', 'atualizadaEm'])
+        && data.keys().hasOnly(['id', 'colaboradorId', 'tarefas', 'dataPrevistaInicio', 'criadaEm', 'atualizadaEm', 'atualizadoPorUid'])
+        && isValidId(data.id)
+        && isValidId(data.colaboradorId)
+        && data.id == data.colaboradorId
+        && data.tarefas is list
+        && data.tarefas.size() == 3
+        && isValidAdmissaoTask(data.tarefas[0])
+        && isValidAdmissaoTask(data.tarefas[1])
+        && isValidAdmissaoTask(data.tarefas[2])
+        && (!('dataPrevistaInicio' in data) || (data.dataPrevistaInicio is string && data.dataPrevistaInicio.size() == 10 && data.dataPrevistaInicio.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')))
+        && data.criadaEm is string
+        && data.criadaEm.size() >= 10
+        && data.criadaEm.size() <= 40
+        && data.atualizadaEm is string
+        && data.atualizadaEm.size() >= 10
+        && data.atualizadaEm.size() <= 40
+        && (!('atualizadoPorUid' in data) || (data.atualizadoPorUid is string && data.atualizadoPorUid == request.auth.uid));
+    }
+
+    // Lista de usuários autorizados:
+    // - Cada usuário autenticado pode consultar apenas o próprio UID para confirmar permissão.
+    // - Listagem e qualquer alteração (create/update/delete) são proibidas para usuários do app.
+    match /authorized_users/{uid} {
+      allow get: if isSignedIn() && isValidId(uid) && request.auth.uid == uid;
+      allow list, create, update, delete: if false;
+    }
+
+    // Colaboradores: leitura e gravação restritas aos UIDs autorizados
+    match /colaboradores/{colaboradorId} {
+      allow get: if isAuthorizedUser() && isValidId(colaboradorId);
+      allow list: if isAuthorizedUser();
+      allow create: if isAuthorizedUser()
+        && isValidId(colaboradorId)
+        && isValidColaborador(incoming())
+        && incoming().id == colaboradorId;
+      allow update: if isAuthorizedUser()
+        && isValidId(colaboradorId)
+        && isValidColaborador(incoming())
+        && incoming().id == existing().id
+        && incoming().diff(existing()).affectedKeys().hasOnly(['nome', 'email', 'setor', 'situacao', 'atualizadoEm', 'atualizadoPorUid']);
+      allow delete: if isAuthorizedUser() && isValidId(colaboradorId);
+    }
+
+    // Admissões: leitura e gravação restritas aos UIDs autorizados;
+    // id == colaboradorId garante no máximo 1 admissão por colaborador.
+    match /admissoes/{admissaoId} {
+      allow get: if isAuthorizedUser() && isValidId(admissaoId);
+      allow list: if isAuthorizedUser();
+      allow create: if isAuthorizedUser()
+        && isValidId(admissaoId)
+        && isValidAdmissao(incoming())
+        && incoming().id == admissaoId
+        && existsAfter(/databases/$(database)/documents/colaboradores/$(incoming().colaboradorId));
+      allow update: if isAuthorizedUser()
+        && isValidId(admissaoId)
+        && isValidAdmissao(incoming())
+        && incoming().id == existing().id
+        && incoming().colaboradorId == existing().colaboradorId
+        && incoming().criadaEm == existing().criadaEm
+        && incoming().diff(existing()).affectedKeys().hasOnly(['tarefas', 'dataPrevistaInicio', 'atualizadaEm', 'atualizadoPorUid']);
+      allow delete: if isAuthorizedUser() && isValidId(admissaoId);
+    }
+  }
+}

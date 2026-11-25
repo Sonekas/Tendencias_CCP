@@ -1,0 +1,143 @@
+{
+  "entities": {
+    "AuthorizedUser": {
+      "title": "Usuário Autorizado",
+      "description": "Registro gerenciado exclusivamente por administradores no Console do Firebase para liberar acesso via UID.",
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string",
+          "description": "Nome ou identificação opcional do usuário autorizado.",
+          "maxLength": 160
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "E-mail informativo opcional cadastrado pelo administrador.",
+          "maxLength": 254
+        },
+        "observacao": {
+          "type": "string",
+          "description": "Nota administrativa opcional.",
+          "maxLength": 300
+        }
+      }
+    },
+    "Colaborador": {
+      "title": "Colaborador",
+      "description": "Cadastro fictício de colaborador no Sistema de Gestão de Colaboradores.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador único do colaborador.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "nome": {
+          "type": "string",
+          "description": "Nome completo do colaborador.",
+          "minLength": 2,
+          "maxLength": 160
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "E-mail profissional do colaborador.",
+          "minLength": 5,
+          "maxLength": 254,
+          "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$"
+        },
+        "setor": {
+          "type": "string",
+          "enum": ["RH", "TI", "Financeiro", "Operações"],
+          "description": "Setor padronizado do colaborador."
+        },
+        "situacao": {
+          "type": "string",
+          "enum": ["Ativo", "Inativo"],
+          "description": "Situação cadastral do colaborador."
+        },
+        "atualizadoEm": {
+          "type": "string",
+          "description": "Carimbo ISO da última atualização.",
+          "minLength": 10,
+          "maxLength": 40
+        },
+        "atualizadoPorUid": {
+          "type": "string",
+          "description": "UID do usuário autorizado responsável pela escrita.",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": ["id", "nome", "email", "setor", "situacao", "atualizadoEm"]
+    },
+    "Admissao": {
+      "title": "Admissão",
+      "description": "Checklist de admissão em três etapas vinculado a um único colaborador.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador da admissão (igual ao colaboradorId para garantir uma por pessoa).",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "colaboradorId": {
+          "type": "string",
+          "description": "ID do colaborador vinculado.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "tarefas": {
+          "type": "array",
+          "description": "Lista fixa com as 3 tarefas do checklist de admissão."
+        },
+        "dataPrevistaInicio": {
+          "type": "string",
+          "description": "Data prevista de início opcional no formato AAAA-MM-DD.",
+          "minLength": 10,
+          "maxLength": 10,
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "criadaEm": {
+          "type": "string",
+          "description": "Carimbo ISO de criação.",
+          "minLength": 10,
+          "maxLength": 40
+        },
+        "atualizadaEm": {
+          "type": "string",
+          "description": "Carimbo ISO da última atualização.",
+          "minLength": 10,
+          "maxLength": 40
+        },
+        "atualizadoPorUid": {
+          "type": "string",
+          "description": "UID do usuário autorizado responsável pela escrita.",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": ["id", "colaboradorId", "tarefas", "criadaEm", "atualizadaEm"]
+    }
+  },
+  "firestore": {
+    "/authorized_users/{uid}": {
+      "schema": { "$ref": "#/entities/AuthorizedUser" },
+      "description": "Lista de UIDs autorizados mantida exclusivamente pelo administrador."
+    },
+    "/colaboradores/{colaboradorId}": {
+      "schema": { "$ref": "#/entities/Colaborador" },
+      "description": "Diretório de colaboradores fictícios acessível apenas para UIDs autorizados."
+    },
+    "/admissoes/{admissaoId}": {
+      "schema": { "$ref": "#/entities/Admissao" },
+      "description": "Processos e checklists de admissão vinculados por colaboradorId."
+    }
+  }
+}

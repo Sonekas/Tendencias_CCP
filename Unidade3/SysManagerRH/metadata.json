@@ -1,0 +1,8 @@
+{
+  "name": "Sistema de Gestão de Colaboradores",
+  "description": "Aplicação acadêmica de RH para cadastro, busca, filtragem, edição e importação CSV de colaboradores.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
