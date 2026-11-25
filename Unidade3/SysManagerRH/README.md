@@ -1,11 +1,13 @@
 | **Instituição** | `Centro Universitário UDF` |
+|---|---|
 | **Curso** | `Ciência da Computação` |
 | **Disciplina** | `Tendências em Ciência da Computação` |
 | **Professor(a)** | `Kadidja Valéria` |
 
 ### Divisão de Responsabilidades do Grupo *(Colaboração em grupo — 0,3 ponto)*
 
-| Integrante | RA / Identificação | Responsabilidade no Projeto |
+| Integrante | RA / Identificação |
+|---|---|
 | `Pedro Henrique Cunha Amancio da Silva` | `45729620`
 
 
