@@ -7,8 +7,8 @@
 [![Tests](https://img.shields.io/badge/Tests-13%2F13%20Passing-brightgreen.svg)](#5-guia-de-instalação-execução-e-roteiro-de-testes-adversariais-2611)
 
 | **Aluno** | `Pedro Henrique Cunha Amancio da Silva` |
-| **RGM** | `45729620` |
 |---|---|
+| **RGM** | `45729620` |
 | **Instituição** | `Centro Universitário UDF` |
 | **Curso** | `Ciência da Computação` |
 | **Disciplina** | `Tendências em Ciência da Computação` |
