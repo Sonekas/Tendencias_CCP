@@ -16,7 +16,7 @@
 
 ---
 
-🔗 **Acesse o sistema online:** [https://gradebot-udf.streamlit.app](https://gradebot-udf.streamlit.app)
+🔗 **Acesse o sistema online:** [[https://gradebot-udf.streamlit.app](https://gradebot-udf.streamlit.app](https://tendenciasccp-fbklryhwr8umnvzrpi4m9q.streamlit.app/))
 
 
 ## 📑 Sumário Executivo
