@@ -1,0 +1,122 @@
+[
+  {
+    "codigo": "CC101",
+    "nome": "Algoritmos e Programação Estruturada",
+    "semestre": 1,
+    "dia_semana": "Segunda-feira",
+    "turno": "Noturno",
+    "horario": "19:00 - 22:30",
+    "prerequisito": null,
+    "carga_estudo": "Alta",
+    "creditos": 4,
+    "descricao": "Fundamentos de lógica de programação, tipos de dados, estruturas de controle e funções em C/Python."
+  },
+  {
+    "codigo": "CC102",
+    "nome": "Introdução à Computação e Circuitos Digitais",
+    "semestre": 1,
+    "dia_semana": "Terça-feira",
+    "turno": "Noturno",
+    "horario": "19:00 - 22:30",
+    "prerequisito": null,
+    "carga_estudo": "Média",
+    "creditos": 4,
+    "descricao": "Arquitetura básica de von Neumann, representação binária e circuitos lógicos combinacionais."
+  },
+  {
+    "codigo": "CC103",
+    "nome": "Cálculo Diferencial e Integral I",
+    "semestre": 1,
+    "dia_semana": "Quarta-feira",
+    "turno": "Noturno",
+    "horario": "19:00 - 22:30",
+    "prerequisito": null,
+    "carga_estudo": "Alta",
+    "creditos": 4,
+    "descricao": "Limites, continuidade, derivadas e introdução às integrais com aplicações computacionais."
+  },
+  {
+    "codigo": "CC104",
+    "nome": "Fundamentos de Redes de Computadores",
+    "semestre": 1,
+    "dia_semana": "Quinta-feira",
+    "turno": "Noturno",
+    "horario": "19:00 - 22:30",
+    "prerequisito": null,
+    "carga_estudo": "Baixa",
+    "creditos": 4,
+    "descricao": "Modelos OSI e TCP/IP, protocolos de transporte, roteamento e topologias de rede."
+  },
+  {
+    "codigo": "CC201",
+    "nome": "Estruturas de Dados Avançadas",
+    "semestre": 2,
+    "dia_semana": "Segunda-feira",
+    "turno": "Noturno",
+    "horario": "19:00 - 22:30",
+    "prerequisito": "CC101",
+    "carga_estudo": "Alta",
+    "creditos": 4,
+    "descricao": "Listas encadeadas, pilhas, filas, árvores binárias balanceadas, tabelas hash e análise assintótica."
+  },
+  {
+    "codigo": "CC202",
+    "nome": "Banco de Dados Relacional e Modelagem",
+    "semestre": 2,
+    "dia_semana": "Terça-feira",
+    "turno": "Noturno",
+    "horario": "19:00 - 22:30",
+    "prerequisito": "CC101",
+    "carga_estudo": "Média",
+    "creditos": 4,
+    "descricao": "Modelagem conceitual/lógica, Álgebra Relacional, SQL avançado e integridade referencial."
+  },
+  {
+    "codigo": "CC203",
+    "nome": "Cálculo Diferencial e Integral II",
+    "semestre": 2,
+    "dia_semana": "Quarta-feira",
+    "turno": "Noturno",
+    "horario": "19:00 - 22:30",
+    "prerequisito": "CC103",
+    "carga_estudo": "Alta",
+    "creditos": 4,
+    "descricao": "Técnicas de integração, séries infinitas, cálculo vetorial e funções de múltiplas variáveis."
+  },
+  {
+    "codigo": "CC204",
+    "nome": "Engenharia de Software e Metodologias Ágeis",
+    "semestre": 2,
+    "dia_semana": "Sexta-feira",
+    "turno": "Noturno",
+    "horario": "19:00 - 22:30",
+    "prerequisito": null,
+    "carga_estudo": "Baixa",
+    "creditos": 4,
+    "descricao": "Ciclo de vida de software, requisitos, Scrum, Kanban, testes automatizados e Git."
+  },
+  {
+    "codigo": "CC301",
+    "nome": "Inteligência Artificial e Aprendizado de Máquina",
+    "semestre": 3,
+    "dia_semana": "Quinta-feira",
+    "turno": "Noturno",
+    "horario": "19:00 - 22:30",
+    "prerequisito": "CC201",
+    "carga_estudo": "Alta",
+    "creditos": 4,
+    "descricao": "Agentes inteligentes, algoritmos de busca, redes neurais artificiais, ética e viés em IA."
+  },
+  {
+    "codigo": "CC302",
+    "nome": "Sistemas Operacionais e Concorrência",
+    "semestre": 3,
+    "dia_semana": "Sexta-feira",
+    "turno": "Noturno",
+    "horario": "19:00 - 22:30",
+    "prerequisito": "CC102",
+    "carga_estudo": "Média",
+    "creditos": 4,
+    "descricao": "Gerenciamento de processos, threads, escalonamento, memória virtual, semáforos e deadlocks."
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "aluno_id": "UDF-2026-CC",
+  "nome_preferencia": "Estudante UDF",
+  "trabalha_periodo_integral": false,
+  "disciplinas_concluidas": [
+    "CC101",
+    "CC103"
+  ],
+  "ultima_atualizacao": "2026-11-25T23:46:22.692005",
+  "total_creditos_concluidos": 8,
+  "historico_simulacoes": 0
+}
