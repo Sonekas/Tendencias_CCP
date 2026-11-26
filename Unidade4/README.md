@@ -1,4 +1,4 @@
-# 🎓 GradeBot UDF: Agente Conversacional Autônomo para Otimização de Grade Curricular e Equidade Acadêmica
+# 🎓 GradeBot: Agente Conversacional Autônomo para Otimização de Grade Curricular e Equidade Acadêmica
 
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Framework](https://img.shields.io/badge/Framework-Streamlit-FF4B4B.svg)](https://streamlit.io/)
@@ -6,7 +6,7 @@
 [![LGPD](https://img.shields.io/badge/Privacy%20by%20Design-LGPD%20Compliant-success.svg)](#4-análise-crítica-viés-algorítmico-privacidade-e-ética-1911)
 [![Tests](https://img.shields.io/badge/Tests-13%2F13%20Passing-brightgreen.svg)](#5-guia-de-instalação-execução-e-roteiro-de-testes-adversariais-2611)
 
-Projeto desenvolvido para a disciplina **Tendências em Ciência da Computação (Unidade 4 – Agentes e Ética)** no curso de Bacharelado em Ciência da Computação do **Centro Universitário do Distrito Federal (UDF)**.
+Projeto desenvolvido para a disciplina **Tendências em Ciência da Computação (Unidade 4 – Aplicações e Limitações)** no curso de Bacharelado em Ciência da Computação do **Centro Universitário do Distrito Federal (UDF)**.
 
 ---
 
