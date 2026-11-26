@@ -6,9 +6,18 @@
 [![LGPD](https://img.shields.io/badge/Privacy%20by%20Design-LGPD%20Compliant-success.svg)](#4-análise-crítica-viés-algorítmico-privacidade-e-ética-1911)
 [![Tests](https://img.shields.io/badge/Tests-13%2F13%20Passing-brightgreen.svg)](#5-guia-de-instalação-execução-e-roteiro-de-testes-adversariais-2611)
 
-Projeto desenvolvido para a disciplina **Tendências em Ciência da Computação (Unidade 4 – Aplicações e Limitações)** no curso de Bacharelado em Ciência da Computação do **Centro Universitário do Distrito Federal (UDF)**.
+| **Aluno** | `Pedro Henrique Cunha Amancio da Silva` |
+| **RGM** | `45729620` |
+|---|---|
+| **Instituição** | `Centro Universitário UDF` |
+| **Curso** | `Ciência da Computação` |
+| **Disciplina** | `Tendências em Ciência da Computação` |
+| **Professor(a)** | `Kadidja Valéria` |
 
 ---
+
+🔗 **Acesse o sistema online:** [https://gradebot-udf.streamlit.app](https://gradebot-udf.streamlit.app)
+
 
 ## 📑 Sumário Executivo
 1. [Visão Geral e Problema Resolvido](#1-visão-geral-e-problema-resolvido)
@@ -293,8 +302,3 @@ Para avaliação e demonstração em bancas acadêmicas, execute a seguinte sequ
 
 ---
 
-## 👨‍💻 Autoria e Licença
-- **Curso:** Bacharelado em Ciência da Computação
-- **Instituição:** Centro Universitário do Distrito Federal (UDF)
-- **Disciplina:** Tendências em Ciência da Computação (Unidade 4: Agentes Inteligentes e Ética Computacional)
-- **Licença:** MIT Open Source License.
